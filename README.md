@@ -1,50 +1,62 @@
 # Gemini LangGraph Project
 
-A simple LangGraph implementation using Google's Gemini API.
+LangGraph implementation with Google's Gemini API.
 
-## Setup Instructions
+## Setup
 
-### 1. Clone the repository
+Built with Python 3.12 and [uv](https://github.com/astral-sh/uv) on macOS.
 ```bash
+# Clone and navigate
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
+
+# Install dependencies
+uv pip install -r requirements.txt
+
+# Configure environment
+cp .env.example .env
+# Add your Gemini API key to .env
 ```
 
-### 2. Create virtual environment
-```bash
-python -m venv myvenv
-source myvenv/bin/activate  # On Windows: myvenv\Scripts\activate
-```
+Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 
-### 3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Set up environment variables
-Create a `.env` file in the project root:
-```bash
-GEMINI_API_KEY=your_actual_api_key_here
-```
-
-Get your API key from: https://aistudio.google.com/app/apikey
-
-### 5. Run the notebook
+## Usage
 ```bash
 jupyter notebook test_gemini.ipynb
 ```
 
-## Project Structure
+## Structure
 ```
-.
-├── test_gemini.ipynb    # Main notebook
-├── .env.example         # Template for environment variables
-├── .gitignore          # Files to ignore in git
-├── requirements.txt    # Python dependencies
-└── README.md          # This file
+├── test_gemini.ipynb    # Main workflow
+├── requirements.txt     # Dependencies
+├── .env.example         # Environment template
+└── .gitignore          
+```
+
+## Security
+
+`.env` is gitignored. Never commit API keys.
+
+If accidentally committed:
+```bash
+git rm --cached .env
+git commit -m "Remove .env from tracking"
+# Rotate your API key immediately
+```
+
+Ensure `.gitignore` includes:
+```
+.env
+venv/
+myvenv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
 ```
 
 ## Features
-- LangGraph workflow with Gemini API
-- Token counting functionality
-- Environment variable management
+
+- LangGraph workflow integration
+- Token counting
+- Environment-based configuration
