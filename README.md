@@ -7,8 +7,8 @@ LangGraph implementation with Google's Gemini API.
 Built with Python 3.12 and [uv](https://github.com/astral-sh/uv) on macOS.
 ```bash
 # Clone and navigate
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git https://github.com/P-197-719-971-C/ai-agent-systems.git
+cd ai-agent-systems
 
 # Install dependencies
 uv pip install -r requirements.txt
